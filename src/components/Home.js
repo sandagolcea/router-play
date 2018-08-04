@@ -7,7 +7,7 @@ class Home extends React.Component {
       <div>
         <h3>Sample HOME page</h3>
         <span>Go to: </span>
-        <Link to='/products-page'>
+        <Link to='/products-page/456'>
           Go to the products page
         </Link>
       </div>
@@ -16,3 +16,4 @@ class Home extends React.Component {
 }
 
 export default Home;
+
