@@ -14,27 +14,27 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
 
         <Router>
           <div>
+            <Route exact={true} path="/" render={() => (
+                <header className="App-header">
+                  <img src={logo} className="App-logo" alt="logo" />
+                  <h1 className="App-title">Welcome to React</h1>
+                </header>
+            )} />
 
-            <h3>LINKS:</h3>
-            <div>
-              <Link to={'/home'}>HOME</Link>
-            </div>
-            <div>
-              <Link to={'/products-page/123'}>Products</Link>
-            </div>
+            <ol>
+              <li><Link to={'/home'}>HOME</Link></li>
+              <li><Link to={'/products-page/123'}>Products</Link></li>
+            </ol>
 
-            <h3>PAGES:</h3>
-            <div>
-              <Route path="/home" component={Home} />
-              <Route path="/products-page/:productId" component={ProductsPage} />
-            </div>
+            <Route path="/home" component={Home} />
+            <Route path="/products-page/:productId"
+              render={({match}) => (
+                <ProductsPage text={"example prop"} match={match}/>
+              )}
+            />
 
           </div>
         </Router>
