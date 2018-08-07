@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Link , Route, Switch } from 'react-router-dom'
 
 // components
 import Home from './components/Home';
-import ProductsPage from './components/ProductsPage';
-import Dropdown from './components/common/Dropdown';
+import Accessories from './components/Accessories';
+import Products from './components/Products';
 
 import './App.css';
 
@@ -28,13 +28,15 @@ class App extends Component {
 
             <ol>
               <li><Link to={'/home'}>HOME</Link></li>
-              <li><Link to={'/products-page/123'}>Products</Link></li>
+              <li><Link to={'/products/123'}>Products</Link></li>
+              <li><Link to={'/accessories'}>Accessories</Link></li>
             </ol>
-
-            <Route exact path="/home" component={Home} />
             <Switch>
-              <Route exact path="/products-page" render={() => (<ProductsPage text={text} /> )} />
-              <Route path="/products-page/:productId" component={ProductsPage} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/accessories" component={Accessories} />
+              <Route exact path="/products" render={() => (<Products text={text} /> )} />
+              <Route path="/products/:productId" component={Products} />
+              <Route render={() => (<h2>No match</h2>)} />
             </Switch>
           </div>
         </Router>

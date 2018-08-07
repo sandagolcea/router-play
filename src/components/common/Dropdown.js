@@ -4,7 +4,7 @@ class Dropdown extends React.Component {
   render() {
     return (
       <div>
-        <h3>Sample common component</h3>
+        <h3>Sample dropdown component</h3>
       </div>
     )
   }
