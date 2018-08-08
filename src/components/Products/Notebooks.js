@@ -1,9 +1,11 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-const Notebooks = () => (
-    <div>
+const Notebooks = ({ history }) => (
+	<div>
       <h3>Notebooks</h3>
-    </div>
+      <div>{history.action}</div>
+	</div>
 )
 
-export default Notebooks;
+export default withRouter(Notebooks);

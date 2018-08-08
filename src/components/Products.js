@@ -17,14 +17,14 @@ export default function Products ({ match, text }) {
 					<div>Extra parameter text: {text}</div>
 				</div>}
 				{match && <div>Product id: {match.params.productId}</div>}
-				<Route exact path={`/match.url/notebooks`} component={Notebooks} />
-				<Route exact path="/products/postcards" component={Postcards} />
 				<div>
 					<Link to='/products/notebooks'>Notebooks</Link>
 				</div>
 				<div>
 					<Link to='/products/postcards'>Postcards</Link>
 				</div>
+				<Route exact path={"/products/notebooks"} component={Notebooks} />
+				<Route exact path="/products/postcards" component={Postcards} />
 			</div>
 		)
 }
